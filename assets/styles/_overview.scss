@@ -1,0 +1,58 @@
+.overview {
+
+  .tile {
+    padding: 20px;
+  }
+
+  .cv {
+    background: dodgerblue;
+    color: white;
+  }
+
+  .project {
+    height: 50vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    @media(min-width: 1200px){
+      height: 33vw;
+    }
+
+    .technics {
+      list-style: none;
+      display: flex;
+      padding: 0;
+
+      li {
+        margin-right: 10px;
+      }
+
+    }
+
+
+
+    .project-bg {
+      position: absolute;
+      z-index: -1;
+      width: 50vw;
+      height: 50vw;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      opacity: .5;
+      transition: all .3s ease-in;
+      transition: transform 2s ease-in;
+    }
+
+    &:hover {
+      .project-bg {
+        opacity: .7;
+        transform: scale(2);
+      }
+    }
+
+  }
+}

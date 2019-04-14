@@ -1,68 +1,51 @@
 <template>
   <section class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        ushmorov
-      </h1>
-      <h2 class="subtitle">
-        homepage of ivan ushmorov
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
+      <div class="md-layout overview">
+        <div class="md-layout-item md-medium-size-50 cv tile">
+          <h1 class="title">
+            Ivan Ushmorov
+          </h1>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque enim exercitationem facilis fugiat hic in ipsum magni, natus voluptates?</p>
+        </div>
+        <div v-for="(project) in projects" :key="project.id" class="md-layout-item md-medium-size-50 md-large-size-33 project tile">
+          <h3 class="title">{{ project.title }}</h3>
+          <ul class="technics">
+            <li v-for="(tag) in project.tags" :key="tag"><md-chip>{{ tag }}</md-chip></li>
+          </ul>
+          <div class="project-bg" :style="{'background-image': `url(http://dev.ushmorov.de/${project.image.path})`}"></div>
+        </div>
       </div>
     </div>
+    <FooterComponent/>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+  import FooterComponent from '~/components/Footer.vue'
 
-export default {
-  components: {
-    Logo
+  export default {
+    components: {
+      FooterComponent
+    },
+    data() {
+      return {
+        projects: []
+      }
+    },
+    created() {
+      this.fetchSomething()
+    },
+    methods: {
+      async fetchSomething() {
+        await this.$axios.$get('http://dev.ushmorov.de/backend/api/collections/get/Projects')
+          .then((response) => {
+            this.projects = response.entries
+          })
+      }
+    }
   }
-}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
