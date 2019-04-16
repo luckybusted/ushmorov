@@ -5,8 +5,22 @@
   }
 
   .cv {
-    background: dodgerblue;
-    color: white;
+    //background: dodgerblue;
+    //color: white;
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .social {
+      display: flex;
+
+      div {
+        margin-right: 10px;
+      }
+
+    }
+
   }
 
   .project {
@@ -17,21 +31,33 @@
     justify-content: space-between;
     position: relative;
 
-    @media(min-width: 1200px){
+    @media(min-width: 1200px) {
       height: 33vw;
     }
 
-    .technics {
-      list-style: none;
-      display: flex;
-      padding: 0;
-
-      li {
-        margin-right: 10px;
+    .md-card {
+      .md-subhead {
+        margin-bottom: 10px;
       }
 
-    }
+      .technics {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
 
+        li {
+          margin-right: 10px;
+          margin-bottom: 10px;
+
+          .md-chip {
+            background: rgba(255, 255, 255, .8);
+          }
+
+        }
+
+      }
+    }
 
 
     .project-bg {
