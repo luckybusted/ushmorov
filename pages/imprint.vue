@@ -1,7 +1,6 @@
 <template>
   <section class="container">
-    THIS IS THE IMPRINT
-    <FooterComponent/>
+    <div v-html="imprint.content"></div>
   </section>
 </template>
 
@@ -10,8 +9,25 @@
 
   export default {
     name: 'imprint',
+    data() {
+      return {
+        imprint: {}
+      }
+    },
     components: {
       FooterComponent
+    },
+    created() {
+      this.fetchImprint()
+    },
+    methods: {
+      async fetchImprint() {
+        await this.$axios.$get('http://dev.ushmorov.de/backend/api/singletons/get/imprint')
+          .then((response) => {
+            console.log(response)
+            this.imprint = response
+          })
+      }
     }
   }
 </script>

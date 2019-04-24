@@ -5,7 +5,7 @@
     </h1>
     <div v-html="about.summary"></div>
     <div class="social">
-      <v-btn round small color="blue" v-for="(social) in about.sociallinks" :key="social.value.name" :href="social.value.link">{{ social.value.name }}</v-btn>
+      <v-btn dark round small color="blue" v-for="(social) in about.sociallinks" :key="social.value.name" :href="social.value.link">{{ social.value.name }}</v-btn>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <v-layout px-3>
 
       <v-flex xs6  class="copy">
-        Ivan Ushmorov &copy; 2019 - Made with <a href="https://getcockpit.com/">getcockpit.com</a>, <a
+        Ivan Ushmorov &copy; {{year}} - Made with <a href="https://getcockpit.com/">getcockpit.com</a>, <a
         href="https://nuxtjs.org">NUXTJS</a> and ❤️.
       </v-flex>
 
@@ -15,7 +15,12 @@
 
 <script>
   export default {
-    name: 'FooterComponent'
+    name: 'FooterComponent',
+    data(){
+      return {
+       year: new Date().getFullYear()
+      }
+    }
   }
 </script>
 
