@@ -24,18 +24,13 @@
   }
 
   .project {
-    height: 50vw;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
 
-    @media(min-width: 1200px) {
-      height: 33vw;
-    }
-
-    .md-card {
+    .v-card {
       .md-subhead {
         margin-bottom: 10px;
       }
@@ -50,9 +45,6 @@
           margin-right: 10px;
           margin-bottom: 10px;
 
-          .md-chip {
-            background: rgba(255, 255, 255, .8);
-          }
 
         }
 

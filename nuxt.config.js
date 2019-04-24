@@ -42,10 +42,13 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    ['nuxt-vue-material', {
-      theme: 'default'
-    }]
+    '@nuxtjs/vuetify'
   ],
+
+  vuetify: {
+    //  theme: { }
+  },
+
   /*
   ** Axios module configuration
   */

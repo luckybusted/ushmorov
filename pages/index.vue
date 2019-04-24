@@ -1,47 +1,47 @@
 <template>
-  <section class="container">
 
-      <div class="md-layout overview">
-        <div class="md-layout-item md-xsmall-size-100 md-medium-size-50 md-large-size-33 cv tile">
-          <AboutMe/>
-        </div>
-        <div v-for="(project) in projects" :key="project.id" class="md-layout-item md-xsmall-size-100 md-medium-size-50 md-large-size-33 project tile">
 
-          <md-card>
-            <md-card-media-cover md-text-scrim>
-              <md-card-media md-ratio="1:1">
-                <img :src="'http://dev.ushmorov.de/' + project.image.path" alt="Skyscraper">
-              </md-card-media>
+  <v-layout wrap class="overview">
+    <v-flex xs12 md6 class="cv tile">
+      <AboutMe/>
+    </v-flex>
+    <v-layout wrap>
 
-              <md-card-area>
-                <md-card-header>
-                  <span class="md-title">{{ project.title }}</span>
-                  <div class="md-subhead" v-html="project.summary"></div>
-                  <ul class="technics">
-                    <li v-for="(tag) in project.tags" :key="tag"><md-chip>{{ tag }}</md-chip></li>
-                  </ul>
-                </md-card-header>
 
-                <md-card-actions>
-                  <md-button><a :href="project.link">zum Projekt</a></md-button>
-                </md-card-actions>
-              </md-card-area>
-            </md-card-media-cover>
-          </md-card>
+      <v-flex xs12 sm6 md4 pa-3 v-for="(project) in projects" :key="project.id" class="project tile">
 
-        </div>
-      </div>
-    <FooterComponent/>
-  </section>
+        <v-card>
+          <!--<v-img :src="'http://dev.ushmorov.de/' + project.image.path"
+                 aspect-ratio="1"/>-->
+
+
+          <v-card-title primary-title>
+            <span class="md-title">{{ project.title }}</span>
+            <div class="md-subhead" v-html="project.summary"></div>
+            <ul class="technics">
+              <li v-for="(tag) in project.tags" :key="tag">
+                <v-chip>{{ tag }}</v-chip>
+              </li>
+            </ul>
+          </v-card-title>
+
+          <v-card-actions>
+            <v-btn flat><a :href="project.link">zum Projekt</a></v-btn>
+          </v-card-actions>
+
+
+        </v-card>
+
+      </v-flex>
+    </v-layout>
+  </v-layout>
 </template>
 
 <script>
-  import FooterComponent from '~/components/Footer.vue'
   import AboutMe from '~/components/AboutMe.vue'
 
   export default {
     components: {
-      FooterComponent,
       AboutMe
     },
     data() {

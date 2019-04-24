@@ -5,7 +5,7 @@
     </h1>
     <div v-html="about.summary"></div>
     <div class="social">
-      <md-chip v-for="(social) in about.sociallinks" :key="social.value.name"><a :href="social.value.link">{{ social.value.name }}</a></md-chip>
+      <v-chip v-for="(social) in about.sociallinks" :key="social.value.name"><a :href="social.value.link">{{ social.value.name }}</a></v-chip>
     </div>
   </div>
 </template>

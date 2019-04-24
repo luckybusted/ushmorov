@@ -14,11 +14,17 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/vuetify": "^0.5.5",
     "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
     "node-sass": "^4.11.0",
     "nuxt": "^2.4.0",
-    "nuxt-vue-material": "^1.1.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vuetify": "^1.5.13",
+    "vuetify-loader": "^1.2.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
