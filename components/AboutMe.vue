@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1 class="title">
+    <h1 class="title mb-3">
       {{about.title}}
     </h1>
     <div v-html="about.summary"></div>
     <div class="social">
-      <v-chip v-for="(social) in about.sociallinks" :key="social.value.name"><a :href="social.value.link">{{ social.value.name }}</a></v-chip>
+      <v-btn round small color="blue" v-for="(social) in about.sociallinks" :key="social.value.name" :href="social.value.link">{{ social.value.name }}</v-btn>
     </div>
   </div>
 </template>
@@ -25,7 +25,6 @@
       async fetchAboutme() {
         await this.$axios.$get('http://dev.ushmorov.de/backend/api/singletons/get/aboutme')
           .then((response) => {
-
             this.about = response
           })
       }

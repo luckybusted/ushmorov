@@ -3,9 +3,10 @@
     <v-content>
       <v-container>
         <nuxt/>
+        <FooterComponent/>
       </v-container>
     </v-content>
-    <FooterComponent/>
+
   </v-app>
 </template>
 <script>

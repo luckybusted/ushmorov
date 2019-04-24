@@ -1,12 +1,16 @@
 <template>
-  <v-footer app>
-    <div class="copy">
-    Ivan Ushmorov &copy; 2019 - Made with <a href="https://getcockpit.com/">getcockpit.com</a>, <a href="https://nuxtjs.org">NUXTJS</a> and Love.
-    </div>
-    <div class="imprint">
-      <nuxt-link to="/imprint">Impressum</nuxt-link>
-    </div>
-  </v-footer>
+  <v-layout px-3>
+
+      <v-flex xs6  class="copy">
+        Ivan Ushmorov &copy; 2019 - Made with <a href="https://getcockpit.com/">getcockpit.com</a>, <a
+        href="https://nuxtjs.org">NUXTJS</a> and ❤️.
+      </v-flex>
+
+      <v-flex xs6 text-xs-right class="imprint">
+        <nuxt-link to="/imprint">Impressum</nuxt-link>
+      </v-flex>
+
+  </v-layout>
 </template>
 
 <script>

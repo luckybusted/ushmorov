@@ -2,13 +2,13 @@
 
 
   <v-layout wrap class="overview">
-    <v-flex xs12 md6 class="cv tile">
+    <v-flex xs12 md6 pa-3 class="cv">
       <AboutMe/>
     </v-flex>
     <v-layout wrap>
 
 
-      <v-flex xs12 sm6 md4 pa-3 v-for="(project) in projects" :key="project.id" class="project tile">
+      <v-flex xs12 sm6 md4 pa-3 v-for="(project) in projects" :key="project.id" class="project">
 
         <v-card>
           <!--<v-img :src="'http://dev.ushmorov.de/' + project.image.path"
@@ -25,9 +25,9 @@
             </ul>
           </v-card-title>
 
-          <v-card-actions>
-            <v-btn flat><a :href="project.link">zum Projekt</a></v-btn>
-          </v-card-actions>
+          <div class="text-xs-right">
+            <v-btn flat color="success" :href="project.link">zum Projekt</v-btn>
+          </div>
 
 
         </v-card>
