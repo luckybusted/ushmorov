@@ -1,5 +1,5 @@
 <template>
-  <v-layout px-3>
+  <v-layout px-3 footer>
 
       <v-flex xs6  class="copy">
         Ivan Ushmorov &copy; {{year}} - Made with <a href="https://getcockpit.com/">getcockpit.com</a>, <a
