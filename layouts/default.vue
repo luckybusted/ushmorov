@@ -6,14 +6,16 @@
         <FooterComponent/>
       </v-container>
     </v-content>
-
+    <Background/>
   </v-app>
 </template>
 <script>
-  import FooterComponent from '~/components/Footer.vue'
+  import FooterComponent from '~/components/Footer.vue';
+  import Background from '~/components/Background.vue';
   export default {
     components: {
-      FooterComponent
+      FooterComponent,
+      Background
     }
   };
 </script>

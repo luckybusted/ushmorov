@@ -16,7 +16,7 @@
 
 
           <v-card-title primary-title>
-            <span class="md-title">{{ project.title }}</span>
+            <h4 class="md-title">{{ project.title }}</h4>
             <div class="mb-2" v-html="project.summary"></div>
             <ul class="technics">
               <li v-for="(tag) in project.tags" :key="tag">
