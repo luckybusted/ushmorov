@@ -4,8 +4,16 @@
       {{about.title}}
     </h1>
     <div v-html="about.summary"></div>
-    <div class="social">
-      <v-btn dark round small color="blue" v-for="(social) in about.sociallinks" :key="social.value.name" :href="social.value.link">{{ social.value.name }}</v-btn>
+    <div v-if="about.sociallinks" class="social">
+      <v-btn fab small dark color="#006567" :href="about.sociallinks[1].value.link">
+          <img width="50%" src="~assets/icons/xing.svg">
+      </v-btn>
+      <v-btn fab small dark color="#1DA1F2" :href="about.sociallinks[0].value.link">
+        <img width="50%" src="~assets/icons/twitter.svg">
+      </v-btn>
+      <v-btn fab small dark color="#0077B5" :href="about.sociallinks[2].value.link">
+        <img width="50%" src="~assets/icons/linkedin.svg">
+      </v-btn>
     </div>
   </div>
 </template>

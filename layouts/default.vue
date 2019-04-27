@@ -6,7 +6,6 @@
         <FooterComponent/>
       </v-container>
     </v-content>
-    <Background/>
   </v-app>
 </template>
 <script>
