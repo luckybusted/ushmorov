@@ -2,10 +2,16 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #f8f8f8;
-}
 
-.theme--light.application {
-  background: transparent;
+.theme--light {
+  &.application {
+    background: transparent;
+  }
+
+  &.v-sheet {
+    background-color: transparent;
+    border-color: #fff;
+    color: inherit;
+    border-bottom: 10px solid;
+  }
 }

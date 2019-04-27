@@ -8,15 +8,15 @@
     <v-layout wrap>
 
 
-      <v-flex xs12 sm6 md4 pa-3 v-for="(project) in projects" :key="project.id" class="project">
+      <v-flex xs12 sm6 pa-3 md4 v-for="(project) in projects" :key="project.id" class="project">
 
-        <v-card>
+        <v-card height="100%">
           <!--<v-img :src="'http://dev.ushmorov.de/' + project.image.path"
                  aspect-ratio="1"/>-->
 
 
           <v-card-title primary-title>
-            <h4 class="md-title">{{ project.title }}</h4>
+            <h3 class="md-title">{{ project.title }}</h3>
             <div class="mb-2" v-html="project.summary"></div>
             <ul class="technics">
               <li v-for="(tag) in project.tags" :key="tag">

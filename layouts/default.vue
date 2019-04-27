@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :style="{backgroundColor: body, color: textColor}">
     <v-content>
       <v-container>
         <nuxt/>
@@ -9,14 +9,45 @@
   </v-app>
 </template>
 <script>
-  import FooterComponent from '~/components/Footer.vue';
-  import Background from '~/components/Background.vue';
+  import FooterComponent from '~/components/Footer.vue'
+  import Background from '~/components/Background.vue'
+  import colorable from 'colorable'
+  import csscolors from 'css-color-names'
+
   export default {
     components: {
       FooterComponent,
-      Background
+      Background,
+      colorable,
+      csscolors
+    },
+    data() {
+      return {
+        colors: {} ,
+        body: '',
+        textColor: ''
+      }
+    },
+    methods: {
+      getColors() {
+        this.colors = colorable(csscolors, { compact: true, threshold: 3 })
+      },
+      chooseColors() {
+
+        let colLength = this.colors.length,
+          colBase = this.colors[Math.floor(Math.random() * colLength)]
+
+        this.body = colBase.hex
+        this.textColor = colBase.combinations[Math.floor(Math.random() * colBase.combinations.length)].hex
+        this.$vuetify.theme.success = this.textColor
+
+      }
+    },
+    created() {
+      this.getColors()
+      this.chooseColors()
     }
-  };
+  }
 </script>
 <style>
   html {
@@ -29,6 +60,10 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
+  }
+
+  body {
+    background: #fff;
   }
 
 </style>
