@@ -2,9 +2,7 @@
 
 
   <v-layout wrap class="overview">
-    <v-flex xs12 md6 pa-3 class="cv">
-      <AboutMe/>
-    </v-flex>
+    <AboutMe/>
     <v-layout wrap>
 
 
