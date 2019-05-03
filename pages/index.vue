@@ -17,8 +17,8 @@
             <h3 class="md-title">{{ project.title }}</h3>
             <div class="mb-2" v-html="project.summary"></div>
             <ul class="technics">
-              <li v-for="(tag) in project.tags" :key="tag">
-                <v-chip>{{ tag }}</v-chip>
+              <li v-for="(tag) in project.tags" :key="tag" class="mr-1">
+                #{{ tag }}
               </li>
             </ul>
           </v-card-title>
