@@ -6,7 +6,7 @@
     <v-layout wrap>
 
 
-      <v-flex xs12 sm6 pa-3 md4 v-for="(project) in projects" :key="project.id" class="project">
+      <v-flex xs12 sm6 pa-3 md4 v-for="(project) in projects" :key="project.id" v-if="project.active" class="project">
 
         <v-card height="100%">
           <!--<v-img :src="'http://dev.ushmorov.de/' + project.image.path"
