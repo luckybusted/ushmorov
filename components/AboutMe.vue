@@ -37,7 +37,7 @@
     },
     methods: {
       async fetchAboutme() {
-        await this.$axios.$get('http://dev.ushmorov.de/backend/api/singletons/get/aboutme')
+        await this.$axios.$get('https://dev.ushmorov.de/backend/api/singletons/get/aboutme')
           .then((response) => {
             this.about = response
           })

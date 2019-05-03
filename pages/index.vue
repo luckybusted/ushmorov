@@ -52,7 +52,7 @@
     },
     methods: {
       async fetchProjects() {
-        await this.$axios.$get('http://dev.ushmorov.de/backend/api/collections/get/Projects')
+        await this.$axios.$get('https://dev.ushmorov.de/backend/api/collections/get/Projects')
           .then((response) => {
 
             console.log('PROJECTS', response.entries)
