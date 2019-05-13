@@ -37,6 +37,7 @@
 
 <script>
   import AboutMe from '~/components/AboutMe.vue'
+  import avatar from '~/assets/images/twitter-avatar.jpg'
 
   export default {
     components: {
@@ -45,6 +46,17 @@
     data() {
       return {
         projects: []
+      }
+    },
+    head(){
+      return {
+        title: 'Homepage of Ivan Ushmorov',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Frontend developer. Based in Munich, Germany.' },
+          { hid: 'twitter-card', name: 'twitter:card', content: 'summary' },
+          { hid: 'twitter-site', name: 'twitter:site', content: '@luckybusted' },
+          { hid: 'twitter-image', name: 'twitter:image', content: avatar }
+          ]
       }
     },
     created() {

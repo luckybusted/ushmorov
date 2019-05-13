@@ -1,7 +1,7 @@
 <template>
   <v-layout wrap>
     <v-flex xs12 md8 pa-3>
-      <h1 class="mb-3 font-weight-black text-uppercase display-4">
+      <h1 class="mb-3 font-weight-black text-uppercase display-4" :class="{'display-3': $vuetify.breakpoint.xs}">
         {{about.title}}
       </h1>
       <div class="headline" v-html="about.summary"></div>
