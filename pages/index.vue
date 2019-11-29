@@ -12,7 +12,7 @@
         v-if="project.active"
         class="project"
       >
-        <v-card height="100%">
+        <v-card height="100%" class="card-wrapper">
           <!--<v-img :src="'http://dev.ushmorov.de/' + project.image.path"
           aspect-ratio="1"/>-->
 
@@ -25,7 +25,7 @@
           </v-card-title>
 
           <div class="text-xs-right">
-            <v-btn flat color="success" :href="project.link">zum Projekt</v-btn>
+            <v-btn flat color="success" :href="project.link">see more</v-btn>
           </div>
         </v-card>
       </v-flex>
@@ -75,5 +75,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.card-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 </style>
