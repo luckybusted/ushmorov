@@ -1,6 +1,14 @@
 <template>
   <v-layout wrap class="overview">
+
     <AboutMe />
+
+    <v-layout wrap>
+      <v-flex xs12 pa-3>
+        <h2>I do:</h2>
+      </v-flex>
+    </v-layout>
+
     <v-layout wrap>
       <v-flex
         xs12
@@ -30,6 +38,38 @@
         </v-card>
       </v-flex>
     </v-layout>
+
+    <v-layout wrap>
+      <v-flex xs12 pa-3>
+        <h2>I write:</h2>
+      </v-flex>
+    </v-layout>
+
+    <v-layout wrap>
+      <v-flex
+        xs12
+        sm6
+        pa-3
+        md4
+        v-for="(post) in posts"
+        :key="post.id"
+        v-if="post.publish"
+        class="post"
+      >
+        <v-card height="100%" class="card-wrapper">
+
+          <v-card-title primary-title>
+            <h3 class="md-title">{{ post.Title }}</h3>
+            <div class="mb-2" v-html="post.Excerpt"></div>
+          </v-card-title>
+
+          <div class="text-xs-right">
+           <!-- <v-btn flat color="success" :href="post.link">see more</v-btn> -->
+          </div>
+        </v-card>
+      </v-flex>
+    </v-layout>
+
   </v-layout>
 </template>
 
@@ -43,7 +83,8 @@ export default {
   },
   data() {
     return {
-      projects: []
+      projects: [],
+      posts: []
     };
   },
   head() {
@@ -62,6 +103,7 @@ export default {
   },
   created() {
     this.fetchProjects();
+    this.fetchPosts();
   },
   methods: {
     async fetchProjects() {
@@ -70,8 +112,16 @@ export default {
         .then(response => {
           this.projects = response.entries;
         });
+    },
+    async fetchPosts() {
+      await this.$axios
+        .$get("https://dev.ushmorov.de/backend/api/collections/get/Posts")
+        .then(response => {
+          this.posts = response.entries;
+        });
     }
   }
+
 };
 </script>
 
