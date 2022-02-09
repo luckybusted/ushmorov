@@ -1,6 +1,6 @@
 # ushmorov
 
-> homepage of ivan ushmorov
+> homepage of ivan ushmorov (deprecated 2019 - 2022)
 
 ## Build Setup
 
